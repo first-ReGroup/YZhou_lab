@@ -155,7 +155,7 @@
 </table>
 </div>
 <script>
-var speed=15//速度数值越大速度越慢
+var speed=10//速度数值越大速度越慢
 butong_net_left2.innerHTML=butong_net_left1.innerHTML
 function Marquee3(){
 if(butong_net_left2.offsetWidth-butong_net_left.scrollLeft<=0)
@@ -168,6 +168,7 @@ var MyMar3=setInterval(Marquee3,speed)
 butong_net_left.onmouseover=function() {clearInterval(MyMar3)}
 butong_net_left.onmouseout=function() {MyMar3=setInterval(Marquee3,speed)}
 </script>
+</div>
 <!--向左滚动代码结束-->	
 	
 	<hr class="auto-style14" />
