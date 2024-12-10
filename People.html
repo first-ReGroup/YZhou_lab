@@ -496,6 +496,42 @@ ZH-CN;mso-bidi-language:AR-SA"> </span>University<br />
 		</tr>
 	</table>
 	</p> -->
+
+	<!--下面是向左滚动代码-->
+<!--<div id="butong_net_left" style="overflow:hidden;width:1200px; height: 930px;">-->
+<div id="butong_net_left" style="width:1200px; height: 700px; overflow-x: auto; position: relative;">  
+    <div style="width: 2200px; position: absolute; white-space: nowrap;">  
+        <img src="imgs/index/1ind_rsch.png" height="700" width="550" class="auto-style45">  
+        <img src="imgs/index/2ind_work.png" height="700" width="550">  
+        <img src="imgs/index/1861548ced5bdaafacbb80c8aad31b4.jpg" height="700" width="550">  
+        <img src="imgs/index/c2c67d5c9126180ad3d9b47bbf32a12.jpg" height="700" width="550">  
+    </div>  
+</div>  
+<script>  
+    var speed = 15; // 速度数值越小速度越快  
+    var marquee = document.querySelector('#butong_net_left > div');  
+    var left = 0;  
+
+    function Marquee3() {  
+        left--;  
+        if (left <= -marquee.offsetWidth + document.getElementById('butong_net_left').offsetWidth) {  
+            left = 0;  
+        }  
+        marquee.style.left = left + 'px';  
+    }  
+
+    var MyMar3 = setInterval(Marquee3, speed);  
+
+    document.getElementById('butong_net_left').onmouseover = function() {  
+        clearInterval(MyMar3);  
+    };  
+
+    document.getElementById('butong_net_left').onmouseout = function() {  
+        MyMar3 = setInterval(Marquee3, speed);  
+    };  
+</script>
+<!--向左滚动代码结束-->	
+	
 	<hr />
 	<p class="auto-style13">For more details, please 
 contact Dr. Yuekuan ZHOU via <a href="mailto:yuekuanzhou@ust.hk">yuekuanzhou@ust.hk</a></p>
