@@ -508,7 +508,6 @@ ZH-CN;mso-bidi-language:AR-SA"> </span>University<br />
             <!-- 包含图片的<div> -->
             <div id="butong_net_left" style="width:1200px; height: 500px; overflow-x: auto; overflow-y: hidden; position: relative;">
                 <div style="position: absolute; white-space: nowrap;">
-                    <!-- 原始图片 -->
                     <img src="ZYK/7dd724a06d7431dffbeaec49443b2b5.jpg" height="400" width="500" class="auto-style45">
                     <img src="ZYK/IMG_20240910_174456.jpg" height="400" width="230">
                     <img src="ZYK/b35dcbae0db6c414dad7b1286faf92a.jpg" height="400" width="500">
@@ -518,7 +517,9 @@ ZH-CN;mso-bidi-language:AR-SA"> </span>University<br />
                     <img src="ZYK/2887919127c268fbbdbe1666d98785b.jpg" height="400" width="500">
                     <img src="ZYK/07f400781449c4d59bfb93ed140e3d1.jpg" height="400" width="500">
                     <img src="ZYK/7ebb2dbbf65a4b6754b0224aa3ab5ae.jpg" height="400" width="500">
-                    <!-- 复制图片到末尾，实现无缝循环 -->
+                </div>
+                <!-- 复制图片到末尾，实现无缝循环 -->
+                <div style="position: absolute; white-space: nowrap; left: 1200px;"> <!-- 注意这里的left值应该与外部div的宽度相同 -->
                     <img src="ZYK/7dd724a06d7431dffbeaec49443b2b5.jpg" height="400" width="500" class="auto-style45">
                     <img src="ZYK/IMG_20240910_174456.jpg" height="400" width="230">
                     <img src="ZYK/b35dcbae0db6c414dad7b1286faf92a.jpg" height="400" width="500">
@@ -540,16 +541,14 @@ ZH-CN;mso-bidi-language:AR-SA"> </span>University<br />
                 function Marquee3() {
                     left--;
                     if (left <= -totalWidth) {
-                        left = 0; // Reset left position to 0
+                        left = 0;
                     }
                     marquee.style.left = left + 'px';
                 }
 
-                // Calculate the total width of all images
+                // Calculate the total width of all images in one set
                 var images = document.querySelectorAll('#butong_net_left img');
-                images.forEach(function(image) {
-                    totalWidth += image.offsetWidth;
-                });
+                totalWidth = images[0].parentNode.offsetWidth; // Use the width of the first set of images
 
                 var MyMar3 = setInterval(Marquee3, speed);
 
