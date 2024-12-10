@@ -508,6 +508,7 @@ ZH-CN;mso-bidi-language:AR-SA"> </span>University<br />
             <!-- 包含图片的<div> -->
             <div id="butong_net_left" style="width:1200px; height: 500px; overflow-x: auto; overflow-y: hidden; position: relative;">
                 <div style="position: absolute; white-space: nowrap;">
+                    <!-- 原始图片 -->
                     <img src="ZYK/7dd724a06d7431dffbeaec49443b2b5.jpg" height="400" width="500" class="auto-style45">
                     <img src="ZYK/IMG_20240910_174456.jpg" height="400" width="230">
                     <img src="ZYK/b35dcbae0db6c414dad7b1286faf92a.jpg" height="400" width="500">
@@ -539,11 +540,9 @@ ZH-CN;mso-bidi-language:AR-SA"> </span>University<br />
                 function Marquee3() {
                     left--;
                     if (left <= -totalWidth) {
-                        left = marquee.firstChild.offsetWidth; // Reset left position to the width of the first image
-                        marquee.style.left = left + 'px';
-                    } else {
-                        marquee.style.left = left + 'px';
+                        left = 0; // Reset left position to 0
                     }
+                    marquee.style.left = left + 'px';
                 }
 
                 // Calculate the total width of all images
