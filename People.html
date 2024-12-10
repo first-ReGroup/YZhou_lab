@@ -497,55 +497,65 @@ ZH-CN;mso-bidi-language:AR-SA"> </span>University<br />
 	</table>
 	</p> -->
 
-<table  border="0" style="width: 100%" >
-<tr>
-			<td class="auto-style61" valign="top" style="height: 29px" colspan="4">
-			<strong>Group Activity</strong></td>
-</tr>
-<tr>
-<td colspan="4" style="vertical-align: top;">
-			<!--下面是向左滚动代码-->
-<!--<div id="butong_net_left" style="overflow:hidden;width:1200px; height: 930px;">-->
-<div id="butong_net_left" style="width:1200px; height: 700px; overflow-x: auto; position: relative;">  
-    <div style="width: 2200px; position: absolute; white-space: nowrap;">  
-        <img src="ZYK/7dd724a06d7431dffbeaec49443b2b5.jpg" height="400" width="500" class="auto-style45">  
-        <img src="ZYK/IMG_20240910_174456.jpg" height="400" width="500">  
-        <img src="ZYK/b35dcbae0db6c414dad7b1286faf92a.jpg" height="400" width="500">  
-        <img src="ZYK/1367c8b079790303549fae6506403c6.jpg" height="400" width="500">  
-	<img src="ZYK/129b8dc8a7df08794ca6ede592d2a1b.jpg" height="400" width="500">  
-	<img src="ZYK/db2c932b1f836d0d77d091b3d8be3b9.jpg" height="400" width="500">  
-	<img src="ZYK/2887919127c268fbbdbe1666d98785b.jpg" height="400" width="500">  
-	<img src="ZYK/07f400781449c4d59bfb93ed140e3d1.jpg" height="400" width="500">  
-	<img src="ZYK/7ebb2dbbf65a4b6754b0224aa3ab5ae.jpg" height="400" width="500">  
-    </div>  
-</div>  
-<script>  
-    var speed = 7; // 速度数值越小速度越快  
-    var marquee = document.querySelector('#butong_net_left > div');  
-    var left = 0;  
+<table border="0" style="width: 100%">
+    <tr>
+        <td class="auto-style61" valign="top" style="height: 29px" colspan="4">
+            <strong>Group Activity</strong>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4" style="vertical-align: top;">
+            <!-- 包含图片的<div> -->
+            <div id="butong_net_left" style="width:1200px; height: 700px; overflow-x: auto; position: relative;">
+                <div style="width: 2200px; position: absolute; white-space: nowrap;">
+                    <img src="ZYK/7dd724a06d7431dffbeaec49443b2b5.jpg" height="400" width="500" class="auto-style45">
+                    <img src="ZYK/IMG_20240910_174456.jpg" height="400" width="500">
+                    <img src="ZYK/b35dcbae0db6c414dad7b1286faf92a.jpg" height="400" width="500">
+                    <img src="ZYK/1367c8b079790303549fae6506403c6.jpg" height="400" width="500">
+                    <img src="ZYK/129b8dc8a7df08794ca6ede592d2a1b.jpg" height="400" width="500">
+                    <img src="ZYK/db2c932b1f836d0d77d091b3d8be3b9.jpg" height="400" width="500">
+                    <img src="ZYK/2887919127c268fbbdbe1666d98785b.jpg" height="400" width="500">
+                    <img src="ZYK/07f400781449c4d59bfb93ed140e3d1.jpg" height="400" width="500">
+                    <img src="ZYK/7ebb2dbbf65a4b6754b0224aa3ab5ae.jpg" height="400" width="500">
+                </div>
+            </div>
+            <!-- 向左滚动代码 -->
+            <script>
+                var speed = 7; // 速度数值越小速度越快
+                var marquee = document.querySelector('#butong_net_left > div');
+                var left = 0;
+                var totalWidth = 0;
 
-    function Marquee3() {  
-        left--;  
-        if (left <= -marquee.offsetWidth + document.getElementById('butong_net_left').offsetWidth) {  
-            left = 0;  
-        }  
-        marquee.style.left = left + 'px';  
-    }  
+                function Marquee3() {
+                    left--;
+                    if (left <= -totalWidth) {
+                        left = 0;
+                        marquee.style.left = left + 'px';
+                        return; // Stop the marquee after reaching the end
+                    }
+                    marquee.style.left = left + 'px';
+                }
 
-    var MyMar3 = setInterval(Marquee3, speed);  
+                // Calculate the total width of all images
+                var images = document.querySelectorAll('#butong_net_left img');
+                images.forEach(function(image) {
+                    totalWidth += image.offsetWidth;
+                });
 
-    document.getElementById('butong_net_left').onmouseover = function() {  
-        clearInterval(MyMar3);  
-    };  
+                var MyMar3 = setInterval(Marquee3, speed);
 
-    document.getElementById('butong_net_left').onmouseout = function() {  
-        MyMar3 = setInterval(Marquee3, speed);  
-    };  
-</script>
-<!--向左滚动代码结束-->	
-</td>
-</tr>
-</table>	
+                document.getElementById('butong_net_left').onmouseover = function() {
+                    clearInterval(MyMar3);
+                };
+
+                document.getElementById('butong_net_left').onmouseout = function() {
+                    MyMar3 = setInterval(Marquee3, speed);
+                };
+            </script>
+            <!-- 向左滚动代码结束 -->
+        </td>
+    </tr>
+</table>
 	
 	<hr />
 	<p class="auto-style13">For more details, please 
