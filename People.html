@@ -539,9 +539,11 @@ ZH-CN;mso-bidi-language:AR-SA"> </span>University<br />
                 function Marquee3() {
                     left--;
                     if (left <= -totalWidth) {
-                        left = 0;
+                        left = marquee.firstChild.offsetWidth; // Reset left position to the width of the first image
+                        marquee.style.left = left + 'px';
+                    } else {
+                        marquee.style.left = left + 'px';
                     }
-                    marquee.style.left = left + 'px';
                 }
 
                 // Calculate the total width of all images
